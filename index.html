@@ -3,350 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>i's black auxílio</title>
+<title>Convite Dia das Mães</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+    body{
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #ffdde1, #ee9ca7);
+        margin:0;
+        padding:0;
+    }
 
-body{
-  background:black;
-  color:white;
-  overflow:hidden;
-}
+    .convite{
+        max-width:800px;
+        margin:40px auto;
+        background:white;
+        padding:40px;
+        border-radius:20px;
+        box-shadow:0 0 20px rgba(0,0,0,0.2);
+        text-align:center;
+    }
 
-#bgAnimado{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:-1;
-}
+    h1{
+        color:#d63384;
+        font-size:42px;
+    }
 
-#loadingInicial{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:black;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:22px;
-  z-index:999;
-}
+    h2{
+        color:#444;
+    }
 
-#login{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  background:#111;
-  padding:30px;
-  border-radius:15px;
-  width:280px;
-  text-align:center;
-  box-shadow:0 0 20px #00ff88;
-}
+    p{
+        font-size:20px;
+        color:#555;
+        line-height:1.7;
+    }
 
-input{
-  width:100%;
-  padding:10px;
-  border:none;
-  border-radius:8px;
-  margin-top:10px;
-}
+    .colaboradores{
+        margin-top:30px;
+        text-align:left;
+        background:#fff0f5;
+        padding:20px;
+        border-radius:15px;
+    }
 
-button{
-  width:100%;
-  padding:12px;
-  margin-top:12px;
-  border:none;
-  border-radius:10px;
-  background:#00ff88;
-  color:black;
-  font-weight:bold;
-  font-size:15px;
-  cursor:pointer;
-}
+    .colaboradores h3{
+        color:#c2185b;
+        text-align:center;
+    }
 
-#painel{display:none;}
+    ul{
+        columns:2;
+        font-size:18px;
+    }
 
-.topo{
-  text-align:center;
-  padding:15px;
-  font-size:22px;
-  text-shadow:0 0 10px #00ff88;
-}
+    li{
+        margin:10px 0;
+    }
 
-.sidebar{
-  position:fixed;
-  left:0;
-  top:0;
-  width:90px;
-  height:100%;
-  background:#080808;
-  padding-top:80px;
-}
-
-.tab{
-  padding:15px;
-  text-align:center;
-  cursor:pointer;
-  border-bottom:1px solid #222;
-}
-
-.tab:hover{background:#111;}
-
-.aimGlow{
-  animation:neon 1s infinite alternate;
-}
-
-@keyframes neon{
-  from{box-shadow:0 0 5px #00ff88;}
-  to{box-shadow:0 0 15px #00ff88;}
-}
-
-.content{
-  margin-left:100px;
-  padding:15px;
-}
-
-.card{
-  background:#111;
-  padding:16px;
-  border-radius:14px;
-  margin-bottom:14px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:16px;
-}
-
-.switch{
-  width:65px;
-  height:32px;
-  background:#333;
-  border-radius:25px;
-  position:relative;
-  cursor:pointer;
-}
-
-.switch::after{
-  content:"";
-  width:28px;
-  height:28px;
-  background:white;
-  position:absolute;
-  top:2px;
-  left:2px;
-  border-radius:50%;
-  transition:.3s;
-}
-
-.switch.on{background:#00ff88;}
-.switch.on::after{left:35px;}
-
-.secao{display:none;}
-
-#contador{
-  text-align:center;
-  margin-bottom:12px;
-  color:#00ff88;
-  font-size:16px;
-}
-
-#crosshair{
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:25px;
-  height:25px;
-  border:2px solid #00ff88;
-  border-radius:50%;
-  display:none;
-}
-
-#loadingJogo{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:black;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  font-size:22px;
-}
+    .rodape{
+        margin-top:30px;
+        font-size:18px;
+        color:#777;
+    }
 </style>
 </head>
 
 <body>
 
-<canvas id="bgAnimado"></canvas>
+<div class="convite">
 
-<div id="loadingInicial">Carregando painel...</div>
+    <h1>🌸 Convite Especial 🌸</h1>
 
-<div id="login">
-  <h2>i's black auxílio</h2>
-  <input type="password" id="senha">
-  <button onclick="verSenha()">Ver senha</button>
-  <button onclick="entrar()">Entrar</button>
-  <div id="erro"></div>
-</div>
+    <h2>Comemoração do Dia das Mães</h2>
 
-<div id="painel">
-<div class="topo">i's black auxílio</div>
+    <p>
+        Temos a honra de convidar você e sua família para uma linda homenagem
+        em celebração ao <strong>Dia das Mães</strong>, um momento especial de carinho,
+        gratidão e amor.
+    </p>
 
-<div class="sidebar">
-  <div class="tab aimGlow" onclick="abrir('aim')">AIM</div>
-  <div class="tab" onclick="abrir('visual')">VISUAL</div>
-  <div class="tab" onclick="abrir('config')">CONFIG</div>
-</div>
+    <p>
+        Será uma ocasião cheia de alegria, homenagens e confraternização para todas
+        as mães presentes.
+    </p>
 
-<div class="content">
-<div id="contador">Funções ativas: 0</div>
+    <div class="colaboradores">
 
-<div id="aim" class="secao">
-  <div class="card">Auto-aim <div class="switch" onclick="toggle(this,'aim')"></div></div>
-  <div class="card">No recoil <div class="switch" onclick="toggle(this)"></div></div>
-  <div class="card">Speed hack <div class="switch" onclick="toggle(this)"></div></div>
-  <div class="card">Headshot <div class="switch" onclick="toggle(this)"></div></div>
-  <div class="card">Teleport <div class="switch" onclick="toggle(this)"></div></div>
-</div>
+        <h3>✨ Colaboradores e Apoiadores ✨</h3>
 
-<div id="visual" class="secao">
-  <div class="card">Auxilio 100%  <div class="switch" onclick="toggle(this)"></div></div>
-  <div class="card">Esp <div class="switch" onclick="toggle(this)"></div></div>
-  <div class="card">Aimbot <div class="switch" onclick="toggle(this)"></div></div>
-  <div class="card">Aimlock <div class="switch" onclick="toggle(this)"></div></div>
-  <div class="card">Anti-ban  <div class="switch" onclick="toggle(this)"></div></div>
-</div>
+        <ul>
+            <li>Geane</li>
+            <li>Letici</li>
+            <li>Gabriel Cosmético</li>
+            <li>Ariel</li>
+            <li>Secretário Tororó</li>
+            <li>Wilian</li>
+            <li>Adrian</li>
+            <li>Bruno - Esposo da Presidente</li>
+            <li>Miriam Trindade</li>
+            <li>Evelin Modas</li>
+            <li>Angela</li>
+            <li>Vice Líder Wilian</li>
+        </ul>
 
-<div id="config" class="secao">
-  <div class="card">
-    Sensibilidade
-    <input type="range" min="1" max="200">
-  </div>
+    </div>
 
-  <button onclick="abrirJogo()">ENTRAR NO JOGO</button>
-
-  <button onclick="liberarArquivo()">ACESSAR ARQUIVO</button>
-
-  <div id="downloadArea" style="display:none; margin-top:10px; text-align:center;">
-    <a href="🌸FF NORMAL🌸 HOLOGRAMA ROSA ATUALIZADO SAFE RANK E CS🌸.zip" download style="color:#00ff88; font-weight:bold;">
-      📥 BAIXAR ARQUIVO
-    </a>
-  </div>
-</div>
+    <div class="rodape">
+        💖 Agradecemos a todos os colaboradores que contribuíram para tornar
+        este momento ainda mais especial. 💖
+    </div>
 
 </div>
-</div>
-
-<div id="crosshair"></div>
-<div id="loadingJogo">Abrindo jogo...</div>
-
-<script>
-const canvas = document.getElementById("bgAnimado");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles=[];
-for(let i=0;i<80;i++){
-particles.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-vx:(Math.random()-0.5)*1,
-vy:(Math.random()-0.5)*1
-});
-}
-
-function animate(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="#00ff88";
-
-particles.forEach(p=>{
-p.x+=p.vx;
-p.y+=p.vy;
-if(p.x<0||p.x>canvas.width)p.vx*=-1;
-if(p.y<0||p.y>canvas.height)p.vy*=-1;
-ctx.beginPath();
-ctx.arc(p.x,p.y,2,0,Math.PI*2);
-ctx.fill();
-});
-
-for(let i=0;i<particles.length;i++){
-for(let j=i+1;j<particles.length;j++){
-let dx=particles[i].x-particles[j].x;
-let dy=particles[i].y-particles[j].y;
-let dist=Math.sqrt(dx*dx+dy*dy);
-if(dist<120){
-ctx.strokeStyle="rgba(0,255,136,0.2)";
-ctx.beginPath();
-ctx.moveTo(particles[i].x,particles[i].y);
-ctx.lineTo(particles[j].x,particles[j].y);
-ctx.stroke();
-}
-}
-}
-
-requestAnimationFrame(animate);
-}
-animate();
-
-setTimeout(()=>{
-loadingInicial.style.display="none";
-},2000);
-
-let senhaCorreta="bnsanttos";
-let ativos=0;
-
-function entrar(){
-if(senha.value===senhaCorreta){
-login.style.display="none";
-painel.style.display="block";
-abrir('aim');
-}else{
-erro.innerText="Senha incorreta";
-}
-}
-
-function verSenha(){
-senha.type=senha.type==="password"?"text":"password";
-}
-
-function abrir(sec){
-document.querySelectorAll(".secao")
-.forEach(s=>s.style.display="none");
-document.getElementById(sec).style.display="block";
-}
-
-function toggle(el,tipo){
-el.classList.toggle("on");
-if(el.classList.contains("on")) ativos++;
-else ativos--;
-contador.innerText="Funções ativas: "+ativos;
-if(tipo==="aim"){
-crosshair.style.display=el.classList.contains("on")?"block":"none";
-}
-}
-
-function abrirJogo(){
-loadingJogo.style.display="flex";
-setTimeout(()=>{
-window.location.href="intent://#Intent;package=com.dts.freefireth;end";
-},2000);
-}
-
-function liberarArquivo(){
-let senhaDownload=prompt("Digite a senha para acessar o arquivo:");
-if(senhaDownload==="is black"){
-document.getElementById("downloadArea").style.display="block";
-}else{
-alert("Senha incorreta!");
-}
-}
-</script>
 
 </body>
-  </html>
+</html>
