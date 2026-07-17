@@ -527,3 +527,761 @@ Comprar Curso
 </body>
 
 </html>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080b18;
+    color:#fff;
+}
+
+
+/* HEADER */
+
+header{
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    background:rgba(8,11,24,.85);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+
+.logo h2{
+    font-size:30px;
+    color:#fff;
+}
+
+.logo span{
+    color:#2563eb;
+}
+
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+
+.btn-menu{
+    background:#2563eb;
+    padding:12px 25px;
+    border-radius:30px;
+}
+
+
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+padding:160px 8% 80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:50px;
+
+}
+
+
+.hero-text{
+
+max-width:650px;
+
+}
+
+
+.tag{
+
+display:inline-block;
+background:#111827;
+border:1px solid #2563eb;
+padding:10px 20px;
+border-radius:30px;
+color:#60a5fa;
+margin-bottom:25px;
+
+}
+
+
+
+.hero h1{
+
+font-size:55px;
+line-height:1.2;
+margin-bottom:25px;
+
+}
+
+
+.hero p{
+
+font-size:18px;
+color:#cbd5e1;
+line-height:1.8;
+
+}
+
+
+
+.preco{
+
+margin:30px 0;
+
+}
+
+
+.preco h3{
+
+color:#94a3b8;
+
+}
+
+
+.preco h2{
+
+font-size:55px;
+color:#22c55e;
+
+}
+
+
+
+
+.btn{
+
+display:inline-block;
+background:#22c55e;
+color:white;
+text-decoration:none;
+padding:18px 45px;
+border-radius:12px;
+font-size:20px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+
+.btn:hover{
+
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(34,197,94,.3);
+
+}
+
+
+
+
+.hero-image img{
+
+width:500px;
+border-radius:25px;
+box-shadow:0 30px 70px rgba(0,0,0,.5);
+
+}
+
+
+
+
+
+
+section{
+
+padding:90px 8%;
+
+}
+
+
+section h2{
+
+font-size:40px;
+text-align:center;
+margin-bottom:40px;
+
+}
+
+
+
+.sobre{
+
+text-align:center;
+background:#0f172a;
+
+}
+
+
+.sobre p{
+
+max-width:900px;
+margin:auto;
+font-size:20px;
+color:#cbd5e1;
+
+}
+
+
+
+
+
+
+/* CARDS */
+
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+
+
+.card{
+
+background:#111827;
+padding:35px;
+border-radius:20px;
+border:1px solid #1e293b;
+transition:.4s;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-10px);
+border-color:#2563eb;
+
+}
+
+
+.card h3{
+
+font-size:25px;
+margin-bottom:15px;
+
+}
+
+
+.card p{
+
+color:#cbd5e1;
+line-height:1.7;
+
+}
+
+
+
+
+
+
+/* MODULOS */
+
+
+.modulos{
+
+background:#0f172a;
+
+}
+
+
+.lista{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+
+}
+
+
+.lista div{
+
+background:#111827;
+padding:25px;
+border-radius:15px;
+font-size:18px;
+border:1px solid #1e293b;
+
+}
+
+
+
+
+
+
+/* VIDEO */
+
+
+.video iframe{
+
+width:100%;
+height:500px;
+border:0;
+border-radius:20px;
+
+}
+
+
+
+
+
+/* BENEFICIOS */
+
+
+.beneficios{
+
+background:#0f172a;
+
+}
+
+
+.beneficios ul{
+
+max-width:600px;
+margin:auto;
+list-style:none;
+
+}
+
+
+.beneficios li{
+
+padding:15px;
+font-size:20px;
+background:#111827;
+margin-bottom:10px;
+border-radius:10px;
+
+}
+
+
+
+
+
+/* DEPOIMENTOS */
+
+
+.depoimentos{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+
+}
+
+
+.depoimentos div{
+
+background:#111827;
+padding:30px;
+border-radius:20px;
+text-align:center;
+
+}
+
+
+
+
+/* FAQ */
+
+
+#faq h3{
+
+color:#60a5fa;
+margin-top:25px;
+
+}
+
+
+#faq p{
+
+color:#cbd5e1;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#020617;
+text-align:center;
+padding:60px 20px;
+
+}
+
+
+footer a{
+
+display:inline-block;
+background:#22c55e;
+color:white;
+padding:15px 40px;
+border-radius:10px;
+text-decoration:none;
+margin:25px;
+
+}
+
+
+
+
+
+/* CELULAR */
+
+
+@media(max-width:900px){
+
+
+header{
+
+padding:20px;
+
+}
+
+
+nav{
+
+display:none;
+
+}
+
+
+.hero{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+
+.hero-image img{
+
+width:100%;
+
+}
+
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+.lista{
+
+grid-template-columns:1fr;
+
+}
+
+
+.depoimentos{
+
+grid-template-columns:1fr;
+
+}
+
+
+.video iframe{
+
+height:250px;
+
+}
+
+
+}
+.compra{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:5px;
+background:linear-gradient(135deg,#22c55e,#16a34a);
+padding:18px 45px;
+border-radius:15px;
+box-shadow:0 15px 40px rgba(34,197,94,.35);
+position:relative;
+overflow:hidden;
+
+}
+
+
+.compra span{
+
+font-size:13px;
+font-weight:400;
+opacity:.9;
+
+}
+
+
+.compra::before{
+
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.5),
+transparent
+);
+
+transition:.6s;
+
+}
+
+
+.compra:hover::before{
+
+left:100%;
+
+}
+
+
+.compra:hover{
+
+transform:scale(1.05);
+
+}
+.cursos{
+
+background:#020617;
+
+}
+
+
+.subtitulo{
+
+text-align:center;
+color:#94a3b8;
+margin-top:-25px;
+margin-bottom:40px;
+
+}
+
+
+
+.curso-container{
+
+display:flex;
+gap:25px;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+padding:20px;
+
+}
+
+
+
+.curso-container::-webkit-scrollbar{
+
+height:8px;
+
+}
+
+
+
+.curso-container::-webkit-scrollbar-thumb{
+
+background:#2563eb;
+border-radius:20px;
+
+}
+
+
+
+.curso-card{
+
+min-width:330px;
+background:#111827;
+border-radius:20px;
+overflow:hidden;
+border:1px solid #1e293b;
+scroll-snap-align:start;
+transition:.3s;
+
+}
+
+
+
+.curso-card:hover{
+
+transform:translateY(-10px);
+border-color:#2563eb;
+
+}
+
+
+
+.curso-card img{
+
+width:100%;
+height:190px;
+object-fit:cover;
+
+}
+
+
+
+.curso-card h3{
+
+font-size:25px;
+padding:20px 20px 10px;
+
+}
+
+
+
+.curso-card p{
+
+padding:0 20px;
+color:#cbd5e1;
+min-height:70px;
+
+}
+
+
+
+.curso-card strong{
+
+display:block;
+font-size:28px;
+color:#22c55e;
+padding:20px;
+
+}
+
+
+
+.curso-card a{
+
+display:block;
+margin:0 20px 25px;
+text-align:center;
+background:#4d49ce;
+color:rgb(224, 211, 226);
+padding:15px;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+
+}
+
+
+
+.curso-card a:hover{
+
+background:#e28113;
+
+}
+// Scroll suave
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+const destino=document.querySelector(this.getAttribute("href"));
+
+if(destino){
+
+destino.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+}
+
+});
+
+});
+
+
+// Botão voltar ao topo
+
+const botao=document.createElement("button");
+
+botao.innerHTML="⬆";
+
+document.body.appendChild(botao);
+
+botao.style.position="fixed";
+botao.style.bottom="20px";
+botao.style.right="20px";
+botao.style.width="55px";
+botao.style.height="55px";
+botao.style.borderRadius="50%";
+botao.style.border="none";
+botao.style.background="#2563eb";
+botao.style.color="#fff";
+botao.style.cursor="pointer";
+botao.style.display="none";
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>400){
+
+botao.style.display="block";
+
+}else{
+
+botao.style.display="none";
+
+}
+
+});
+
+botao.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
